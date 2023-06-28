@@ -1,5 +1,5 @@
 require("dotenv").config();
-require("@nomiclabs/hardhat-ethers");
+require("@nomiclabs/hardhat-etherscan");
 
 module.exports = {
   solidity: "0.8.10",
@@ -9,7 +9,7 @@ module.exports = {
       accounts: [process.env.PRIVATE_KEY]
     },
   },
-  polygonscan: {
+  etherscan: {
     apiKey: process.env.POLYGONSCAN_API_KEY
   }
 };
