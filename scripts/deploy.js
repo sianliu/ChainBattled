@@ -1,8 +1,9 @@
+const { ethers } = require("hardhat");
+const hre = require("hardhat");
+
 const main = async () => {
   try {
-    const nftContractFactory = await hre.ethers.getContractFactory(
-      "ChainBattles"
-    );
+    const nftContractFactory = await hre.ethers.getContractFactory("ChainBattles");
     const nftContract = await nftContractFactory.deploy();
     await nftContract.deployed();
 
