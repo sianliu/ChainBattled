@@ -16,7 +16,7 @@ contract ChainBattles is ERC721URIStorage {
     constructor() ERC721 ("Chain Battles", "CBTLS") {}
 
     // stores NFT fully on-chain 
-    function generateCharacter(uint256 tokenId) public returns(string memory) {
+    function generateCharacter(uint256 tokenId) public view returns(string memory) {
 
     bytes memory svg = abi.encodePacked(
         '<svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMin meet" viewBox="0 0 350 350">',
@@ -56,7 +56,8 @@ contract ChainBattles is ERC721URIStorage {
         return levels.toString();
     } // end getLevels
 
-    function getTokenURI(uint256 tokenId) public returns (string memory){
+    // dataURI contains a link to the metadata
+    function getTokenURI(uint256 tokenId) public view returns (string memory){
         bytes memory dataURI = abi.encodePacked(
             '{',
                 '"name": "Chain Battles #', tokenId.toString(), '",',
