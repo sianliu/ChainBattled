@@ -1,6 +1,3 @@
-require("dotenv").config();
-require("@nomicfoundation/hardhat-ethers");
-
 module.exports = {
   solidity: "0.8.10",
   networks: {
